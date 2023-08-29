@@ -9,15 +9,8 @@
 #         (77, 'jiji', 'hola', 90, 20)
 t = input().split()
 
-elementos = []
-for elemento in t:
-    if elemento.isdigit() or (elemento[0] == '-' and elemento[1:].isdigit()):
-        elementos.append(int(elemento))
-    elif elemento.replace('.', '', 1).isdigit():
-        elementos.append(float(elemento))
-    else:
-        elementos.append(elemento)
+lista = [int(x) if x.isdigit() else x for x in t]
 
-elementos_invertidos = elementos[::-1]
+elementos_invertidos = list(reversed(lista))
 
 print(tuple(elementos_invertidos))
