@@ -12,9 +12,12 @@
 t = input().split()
 m = input().split()
 
-for i in range(1, len(t2)):
-    t2[i] = int(t2[i])
+for i in range(len(t)):
+    if t[i].isdigit():
+        t[i] = int(t[i])
 
-tupla = tuple([f"'{item}'" if isinstance(item, str) else item for item in t2 + t1 + t2])
+for i in range(len(m)):
+    if m[i].isdigit():
+        m[i] = int(m[i])
 
-print('(' + ', '.join(map(str, tupla)) + ')')
+print(tuple(m) + tuple(t) + tuple(m))
