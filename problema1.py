@@ -12,12 +12,9 @@
 t = input().split()
 m = input().split()
 
-valor1 = t1[0]
-valor2 = int(t1[1])
-valor3 = t1[2]
-valor4 = t2[0]
-valor5 = int(t2[1])
+for i in range(1, len(t2)):
+    t2[i] = int(t2[i])
 
-tupla = (f"('{valor4}', {valor5}, {valor1}, {valor2}, '{valor3}', '{valor4}', {valor5})")
+tupla = tuple([f"'{item}'" if isinstance(item, str) else item for item in t2 + t1 + t2])
 
-print(tupla)
+print('(' + ', '.join(map(str, tupla)) + ')')
