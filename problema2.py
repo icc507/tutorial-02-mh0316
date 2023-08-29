@@ -11,8 +11,10 @@ t = input().split()
 
 elementos = []
 for elemento in t:
-    if elemento.isdigit():
+    if elemento.isdigit() or (elemento[0] == '-' and elemento[1:].isdigit()):
         elementos.append(int(elemento))
+    elif elemento.replace('.', '', 1).isdigit():
+        elementos.append(float(elemento))
     else:
         elementos.append(elemento)
 
